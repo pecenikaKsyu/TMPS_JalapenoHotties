@@ -98,6 +98,7 @@ The project is divided in 3 packages that implement each type of design pattern 
  - abstract_factory -> factory methods
  - builder
  - prototype 
+ - sinlgeton 
 
 As a reference for the project theme, was used the `Mafia` game.
 
@@ -110,6 +111,9 @@ created in it. The builder class has a public constructor with all the required 
 
 The **Prototype** populates the world with other numerous secondary characters. It declares the interface for cloning 
 itself.
+
+The **Singleton** allows to limit the creation of a class to a single object, thus, the city may only have an only
+Detective.
 
 ## Conclusion
 In this laboratory work, we studied Creational design patterns. In software engineering, creational design patterns are 
