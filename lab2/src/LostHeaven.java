@@ -1,3 +1,4 @@
+import mafia_simulation.Singleton;
 import mafia_simulation.abstract_factory.factorymethods.SalieriFarm;
 import mafia_simulation.abstract_factory.factorymethods.MorelloDocks;
 import mafia_simulation.builder.*;
@@ -52,6 +53,11 @@ public class LostHeaven {
         System.out.println(court);
         System.out.println(authorities);
         System.out.println(cityPower);
+
+        Singleton singleton = Singleton.getInstance("Detective Norman, your business smells shitty a little bit");
+        Singleton anotherSingleton = Singleton.getInstance("Lucas Bertone, house your breaks");
+        System.out.println(singleton.value);
+        System.out.println(anotherSingleton.value);
 
     }
 }
