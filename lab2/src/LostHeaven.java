@@ -1,8 +1,15 @@
 import mafia_simulation.Singleton;
 import mafia_simulation.abstract_factory.factorymethods.SalieriFarm;
 import mafia_simulation.abstract_factory.factorymethods.MorelloDocks;
+import mafia_simulation.adapter.Capo;
+import mafia_simulation.adapter.Interceptor;
 import mafia_simulation.builder.*;
+import mafia_simulation.composite.MorelloLetter;
+import mafia_simulation.composite.SalieriLetter;
+import mafia_simulation.composite.abstractions.LetterComposite;
 import mafia_simulation.prototype.*;
+import mafia_simulation.proxy.BusProxy;
+import mafia_simulation.proxy.People;
 
 public class LostHeaven {
     public static void main(String[] args){
@@ -58,6 +65,31 @@ public class LostHeaven {
         Singleton anotherSingleton = Singleton.getInstance("Lucas Bertone, house your breaks");
         System.out.println(singleton.value);
         System.out.println(anotherSingleton.value);
+
+        Capo captain = new Capo((new Interceptor()));
+        captain.transport();
+        captain.attack();
+
+        BusProxy ship = new BusProxy();
+        ship.onBoard(new People("Group A"));
+        ship.onBoard(new People("Group B"));
+        ship.onBoard(new People("Group C"));
+        ship.onBoard(new People("Group D"));
+        ship.onBoard(new People("Group E"));
+        ship.onBoard(new People("Group F"));
+        ship.onBoard(new People("Group G"));
+        ship.onBoard(new People("Group H"));
+        ship.onBoard(new People("Group I"));
+
+
+        System.out.println(" The Salieri say: ");
+
+        LetterComposite SalieriMessage = new SalieriLetter().messageFromSalieri();
+        SalieriMessage.print();
+
+        System.out.println(" The Morello say: ");
+        LetterComposite MorelloMessage = new MorelloLetter().messageFromMorello();
+        MorelloMessage.print();
 
     }
 }
