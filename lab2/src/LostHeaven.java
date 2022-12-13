@@ -7,6 +7,9 @@ import mafia_simulation.builder.*;
 import mafia_simulation.composite.MorelloLetter;
 import mafia_simulation.composite.SalieriLetter;
 import mafia_simulation.composite.abstractions.LetterComposite;
+import mafia_simulation.observer.Activity;
+import mafia_simulation.observer.CartelMercenaries;
+import mafia_simulation.observer.GusMercenaries;
 import mafia_simulation.prototype.*;
 import mafia_simulation.proxy.BusProxy;
 import mafia_simulation.proxy.People;
@@ -90,6 +93,16 @@ public class LostHeaven {
         System.out.println(" The Morello say: ");
         LetterComposite MorelloMessage = new MorelloLetter().messageFromMorello();
         MorelloMessage.print();
+
+        Activity battles = new Activity();
+        battles.addObserver(new GusMercenaries());
+        battles.addObserver(new CartelMercenaries());
+
+        battles.timePasses();
+        battles.timePasses();
+        battles.timePasses();
+        battles.timePasses();
+        battles.timePasses();
 
     }
 }
